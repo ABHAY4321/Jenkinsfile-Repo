@@ -1,0 +1,43 @@
+pipeline{
+    agent{
+        label "node"
+    }
+    stages{
+        stage("Print a Message"){
+            steps{
+                echo 'This is Abhay Singh'
+            }
+        }
+        stage("Execute Multiple Commands"){
+            steps{
+                sh '''pwd
+                date
+                cal 2023
+                hostname
+                ifconfig
+                '''
+            }
+        }
+        stage("C"){
+            steps{
+                echo "========executing C========"
+            }
+        }
+        stage("D"){
+            steps{
+                echo "========executing D========"
+            }
+        }
+    }
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
+    }
+}
