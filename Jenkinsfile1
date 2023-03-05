@@ -1,4 +1,4 @@
-pipeline{
+pipeline {
     agent any
     }
     stages{
@@ -34,3 +34,4 @@ pipeline{
             echo "========pipeline execution failed========"
         }
     }
+}
